@@ -42,9 +42,12 @@ def primesLessThan(n):
 	return p
 
 def sumOfSquares(n):
-	s = 0
-	for i in range(1, n + 1): s += i * i
-	return s
+	return sum(getSquares(n))
 
 def squareOfSum(n):
 	return sum(range(1, n + 1)) ** 2
+
+def getSquares(n):
+	s = []
+	for i in range(1, n + 1): s.append(i * i)
+	return s
