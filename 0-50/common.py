@@ -58,3 +58,8 @@ def getDivisorCount(n):
 	for i in range(r, 0, -1):
 		if n % i == 0: d += 1
 	return d * 2
+
+def factorialRecursive(n):
+	f = 1
+	for i in xrange(n, 1, -1): f *= i
+	return f
