@@ -49,3 +49,12 @@ def squareOfSum(n):
 
 def getSquares(n):
 	return [(i * i) for i in range(1, n + 1)]
+
+def getTriangularNumber(n):
+	return (n * (n + 1)) / 2
+
+def getDivisorCount(n):
+	d, r = 1, getRoot(n)
+	for i in range(r, 0, -1):
+		if n % i == 0: d += 1
+	return d * 2
