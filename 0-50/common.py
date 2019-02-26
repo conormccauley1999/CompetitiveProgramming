@@ -59,6 +59,12 @@ def getDivisorCount(n):
 		if n % i == 0: d += 1
 	return d * 2
 
+def getDivisorSum(n):
+	s = 0
+	for i in range(1, int(n / 2) + 1):
+		if n % i == 0: s += i
+	return s
+
 def factorialRecursive(n):
 	f = 1
 	for i in xrange(n, 1, -1): f *= i
