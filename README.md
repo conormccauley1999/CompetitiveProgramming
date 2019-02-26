@@ -1,2 +1,3 @@
 # ProjectEuler
-Finally organising my Project Euler solutions.
+
+Finally organising all of my Project Euler solutions.
