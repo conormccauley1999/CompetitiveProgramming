@@ -38,7 +38,7 @@ def primesLessThan(n):
 	for i in xrange(2, n + 1):
 		if i not in m:
 			p.append(i)
-			for j in xrange(i * i, n + 1, i): m.add(j)
+			for j in xrange(long(i * i), n + 1, i): m.add(j)
 	return p
 
 def sumOfSquares(n):
