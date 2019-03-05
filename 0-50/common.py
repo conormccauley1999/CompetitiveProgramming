@@ -1,5 +1,8 @@
 from math import sqrt, floor
 
+def even(n):
+	return n if n % 2 == 0 else n - 1
+
 def getEvenRoot(n):
 	r = getRoot(n)
 	if r % 2 == 0: return r
@@ -54,6 +57,10 @@ def getSquares(n):
 def getTriangularNumber(n):
 	return (n * (n + 1)) / 2
 
+def isTriangularNumber(n):
+	s = sqrt((8 * n) + 1)
+	return s == int(s)
+
 def getDivisorCount(n):
 	d, r = 1, getRoot(n)
 	for i in range(r, 0, -1):
@@ -82,3 +89,33 @@ def isPrimeTruncatableLR(n): # LR = Left and right
 		strRight = strRight[:-1]
 
 	return True
+
+def isPandigitalInt(n):
+	return isPandigital(str(n))
+
+def isPandigital(s):
+
+	cs = [str(i) for i in range(1, 10)]
+	if len(s) != 9: return False
+
+	for c in cs:
+		if c not in s: return False
+
+	return True
+
+def numberOfRATsWithPerimiter(p):
+	s = 0
+	mx = even(p) - 1
+	for a in range(2, mx, 2):
+		for b in range(2, mx, 2):
+			c = p - (a + b)
+			if (c * c) == (a * a) + (b * b): s += 1
+	return s
+
+def getNthDigitOfFractionalPart(n):
+	r = ""
+	x = 1
+	while len(r) < n:
+		r += str(x)
+		x += 1
+	return int(r[n - 1])
