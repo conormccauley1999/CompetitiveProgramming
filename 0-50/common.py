@@ -15,6 +15,7 @@ def getRoot(n):
 
 def isPrime(n):
 
+	if n == 1: return False
 	if n == 2: return True
 	if n == 3: return True
 	if n % 2 == 0: return False
@@ -69,3 +70,15 @@ def factorialRecursive(n):
 	f = 1
 	for i in xrange(n, 1, -1): f *= i
 	return f
+
+def isPrimeTruncatableLR(n): # LR = Left and right
+
+	strLeft = str(n)[1:]
+	strRight = str(n)[:-1]
+
+	while len(strLeft) > 0:
+		if not isPrime(int(strLeft)) or not isPrime(int(strRight)): return False
+		strLeft = strLeft[1:]
+		strRight = strRight[:-1]
+
+	return True
