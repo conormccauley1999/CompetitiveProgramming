@@ -131,3 +131,17 @@ def getNthDigitOfFractionalPart(n):
 		r += str(x)
 		x += 1
 	return int(r[n - 1])
+
+def getOddComposites(m, ps):
+	cs = []
+	for n in xrange(9, m, 2):
+		if n not in ps: cs.append(n)
+	return cs
+
+def hasNPrimeFactors(x, n, ps):
+	f = 0
+	for p in ps:
+		if x == 1: break
+		if x % p == 0: f += 1
+		while x % p == 0: x /= p
+	return f >= n

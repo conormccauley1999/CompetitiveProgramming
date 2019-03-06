@@ -1,18 +1,16 @@
 # Problem 64
 
-import time
 from math import sqrt, floor
 
-def getPeriod(ns):
-	return # to-do
-
 def getContinuedFractionPeriod(n):
-	period = []
+	ls = []
 	a = floor(sqrt(n))
 	r = 1 / (sqrt(n) - a)
 	while True:
+		ls.append(a)
 		a = floor(r)
 		r = 1 / (r - a)
+	return ls
 
 r = 0
 for n in range(2, 10000):
