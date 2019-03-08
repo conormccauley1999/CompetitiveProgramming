@@ -26,7 +26,7 @@ namespace PokerHands
 
             int handsWon = 0;
 
-            var stream = new FileStream("poker.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            var stream = new FileStream("../files/54.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             var file = new StreamReader(stream, Encoding.UTF8, true, 128);
             int x = 1;
             String line;

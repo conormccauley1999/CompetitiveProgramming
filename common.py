@@ -68,6 +68,9 @@ def isTriangularNumber(n):
 	s = sqrt((8 * n) + 1)
 	return s == int(s)
 
+def getSquareNumber(n):
+	return n * n
+
 def getPentagonalNumber(n):
 	return 0.5 * n * ((3 * n) - 1)
 
@@ -79,6 +82,12 @@ def getHexagonalNumber(n):
 
 def isHexagonalNumber(n):
 	return ((sqrt((8 * n) + 1) + 1) / 4) % 1 == 0
+
+def getHeptagonalNumber(n):
+	return 0.5 * n * ((5 * n) - 3)
+
+def getOctagonalNumber(n):
+	return n * ((3 * n) - 2)
 
 def getDivisorCount(n):
 	d, r = 1, getRoot(n)
