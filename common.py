@@ -1,4 +1,15 @@
 from math import sqrt, floor
+import numpy as np
+
+def npPrimesLessThan(n):
+    sieve = np.ones(n/3 + (n%6==2), dtype=np.bool)
+    sieve[0] = False
+    for i in xrange(int(n**0.5)/3+1):
+        if sieve[i]:
+            k=3*i+1|1
+            sieve[      ((k*k)/3)      ::2*k] = False
+            sieve[(k*k+4*k-2*k*(i&1))/3::2*k] = False
+    return np.r_[2,3,((3*np.nonzero(sieve)[0]+1)|1)]
 
 def even(n):
 	return n if n % 2 == 0 else n - 1
@@ -214,3 +225,22 @@ def getNumLengthQuick(n):
 			else:
 				if n < 100000000: return 8
 				else: return 9
+
+def phi(n, ps):
+	r = n
+	for p in ps:
+		if n % p == 0: r *= (1 - (1.0 / p))
+	return r
+
+def isPerm(a, b):
+	al, bl = getNumLengthQuick(a), getNumLengthQuick(b)
+	if al != bl: return False
+	alst, blst = [], []
+	for i in xrange(0, al):
+		alst.append(a % 10)
+		blst.append(b % 10)
+		a //= 10
+		b //= 10
+	alst.sort()
+	blst.sort()
+	return alst == blst
