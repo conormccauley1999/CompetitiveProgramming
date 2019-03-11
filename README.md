@@ -1,8 +1,8 @@
 # Project Euler
 
-Problems that I haven't gotten around to uploading yet: `145`, `387`.
+I've finally organised all of the Project Euler solutions I've got so far. Fair warning, some of these solutions were written almost three years ago so the quality of the code may be atrocious.
 
-I'm finally going to try and organise all of the Project Euler solutions I've got so far. Fair warning, some of these solutions were written almost three years ago so the quality of the code may be atrocious.
+The following problems were solved by hand so there's no accompanying code: `79`, `205`, `613`.
 
 ![Profile](https://projecteuler.net/profile/conormccauley1999.png)
 
