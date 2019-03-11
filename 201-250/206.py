@@ -19,5 +19,4 @@ while i <= mx:
             sqr[16] == "9" and sqr[18] == "0"
         ):
             print i
-        if i % 1000000 == 0: print mn, mx, i, i2
     i += 10
