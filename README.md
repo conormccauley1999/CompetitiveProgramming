@@ -1,6 +1,6 @@
 # Project Euler
 
-Problems that I haven't gotten around to uploading yet: `145`, `206`, `301`, `387`.
+Problems that I haven't gotten around to uploading yet: `145`, `387`.
 
 I'm finally going to try and organise all of the Project Euler solutions I've got so far. Fair warning, some of these solutions were written almost three years ago so the quality of the code may be atrocious.
 
