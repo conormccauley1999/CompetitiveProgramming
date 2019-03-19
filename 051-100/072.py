@@ -21,15 +21,6 @@ def buildPrimeDivisors(ps, mx):
 			n += p
 	return ds
 
-def getPrimeDivisors(n, ps):
-	ds = set()
-	for p in ps:
-		if n == 1: return ds
-		if n % p == 0:
-			ds.add(p)
-			n /= p
-	return ds
-
 mx = 1000000
 ps = list(npPrimesLessThan(mx + 1))
 np = len(ps)
