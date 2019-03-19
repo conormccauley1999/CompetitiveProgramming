@@ -1,9 +1,25 @@
-# Problem 72 -- incomplete
+# Problem 72
 
 from os import sys, path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 from common import *
+
+def phi(n, ds):
+	r = n
+	for p in ds:
+		r *= (p - 1.0) / p
+	return r
+
+def buildPrimeDivisors(ps, mx):
+	ds = {}
+	for i in xrange(0, mx): ds[i] = set()
+	for p in ps:
+		n = p
+		while n <= mx:
+			ds[n - 1].add(p)
+			n += p
+	return ds
 
 def getPrimeDivisors(n, ps):
 	ds = set()
@@ -17,23 +33,11 @@ def getPrimeDivisors(n, ps):
 mx = 1000000
 ps = list(npPrimesLessThan(mx + 1))
 np = len(ps)
-ds = {}#buildPrimeDivisors(ps, mx)
+ds = buildPrimeDivisors(ps, mx)
+
+s = 0
 
 for n in xrange(2, mx + 1):
-	if n % 100 == 0: print n
-	ds[n] = getPrimeDivisors(n, ps) # need more efficient method
-
-s = mx - 1
-
-for n in xrange(2, mx + 1):
-	dsn = ds[n]
-	for m in xrange(n, mx + 1):
-		dsm = ds[m]
-		valid = True
-		for d in dsm:
-			if d in dsn:
-				valid = False
-				break
-		if valid: s += 1
+	s += phi(n, ds[n - 1])
 
 print s
