@@ -1,2 +1,5 @@
 # Kattis
-My solutions to the Kattis problems that I've solved.
+
+This repository contains the solutions to all of the Kattis problems I've solved.
+
+[My Profile](https://open.kattis.com/users/conor-mccauley)
