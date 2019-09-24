@@ -1,0 +1,22 @@
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\bin\Debug\netcoreapp2.0\PE.deps.json
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\bin\Debug\netcoreapp2.0\PE.runtimeconfig.json
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\bin\Debug\netcoreapp2.0\PE.runtimeconfig.dev.json
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\bin\Debug\netcoreapp2.0\PE.dll
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\bin\Debug\netcoreapp2.0\PE.pdb
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\obj\Debug\netcoreapp2.0\PE.csprojResolveAssemblyReference.cache
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\obj\Debug\netcoreapp2.0\PE.csproj.CoreCompileInputs.cache
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\obj\Debug\netcoreapp2.0\PE.AssemblyInfoInputs.cache
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\obj\Debug\netcoreapp2.0\PE.AssemblyInfo.cs
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\obj\Debug\netcoreapp2.0\PE.dll
+C:\Users\Fergus\Documents\Conor_Files\Misc\PE\PE\obj\Debug\netcoreapp2.0\PE.pdb
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\bin\Debug\netcoreapp2.0\PE.deps.json
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\bin\Debug\netcoreapp2.0\PE.runtimeconfig.json
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\bin\Debug\netcoreapp2.0\PE.runtimeconfig.dev.json
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\bin\Debug\netcoreapp2.0\PE.dll
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\bin\Debug\netcoreapp2.0\PE.pdb
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\obj\Debug\netcoreapp2.0\PE.csprojAssemblyReference.cache
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\obj\Debug\netcoreapp2.0\PE.csproj.CoreCompileInputs.cache
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\obj\Debug\netcoreapp2.0\PE.AssemblyInfoInputs.cache
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\obj\Debug\netcoreapp2.0\PE.AssemblyInfo.cs
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\obj\Debug\netcoreapp2.0\PE.dll
+C:\Users\conor\Dropbox (Personal)\Projects\CompProg\ProjectEuler\551-600\584\BirthdayProblemRevisited\PE\obj\Debug\netcoreapp2.0\PE.pdb
