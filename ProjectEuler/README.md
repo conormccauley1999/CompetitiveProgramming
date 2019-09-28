@@ -1,6 +1,6 @@
 # Project Euler
 
-I've finally organised all of the Project Euler solutions I've got so far. Fair warning, some of these solutions were written almost three years ago so the quality of the code may be atrocious.
+I've finally organised all of the Project Euler solutions I've got so far. Fair warning, some of these solutions were written a long time ago so the quality of the code may be atrocious.
 
 The following problems were solved by hand so there's no accompanying code: `79`, `205`, `613`.
 
