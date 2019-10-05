@@ -1,3 +1,4 @@
+
 # Problem 499
 # See https://arxiv.org/pdf/1209.4203v4.pdf
 
@@ -6,7 +7,7 @@ from decimal import *
 # Solve for z
 def solve(f, s, e):
 	a = Decimal(0.01) # step
-	b = Decimal(0.5) # adjustment
+	b = Decimal(0.5)  # adjustment
 	while True:
 		diff = f(s) - Decimal(0)
 		if abs(diff) < e: return s
@@ -18,11 +19,9 @@ def solve(f, s, e):
 getcontext().prec = 40
 
 # Variables
-M = Decimal(10 ** 9) 	# wealth
-c = Decimal(15) 		# cost
-p = Decimal(1) 			# min pot
-v = c - p 				# max loss
-t = 40	 				# number of terms
+M = Decimal(10 ** 9) # wealth
+c = Decimal(15)      # cost
+t = 40               # number of terms
 
 # Generate coefficients and degrees of p(z)
 x = [Decimal(2) ** Decimal(-i) for i in range(1, t + 1)]
