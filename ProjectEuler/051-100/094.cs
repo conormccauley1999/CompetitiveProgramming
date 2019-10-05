@@ -1,3 +1,5 @@
+// Problem 94
+
 using System;
 
 class PE094 {
