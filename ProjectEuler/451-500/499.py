@@ -1,4 +1,3 @@
-
 # Problem 499
 # See https://arxiv.org/pdf/1209.4203v4.pdf
 
