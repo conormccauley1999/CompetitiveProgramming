@@ -1,6 +1,8 @@
 # Competitive Programming
 
-My solutions to problems on various competitive programming platforms.
+My solutions to problems on various competitive programming platforms (mainly [ProjectEuler](https://projecteuler.net/).
+
+![ProjectEuler progress](https://projecteuler.net/profile/conormccauley1999.png)
 
 | Platform | Profile, etc. |
 | - | - |
