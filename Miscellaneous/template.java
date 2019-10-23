@@ -40,6 +40,8 @@ class Main {
 
 		Reader r = new Reader();
 
+		${1:this}
+
 	}
 
 }
