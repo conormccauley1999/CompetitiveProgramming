@@ -1,33 +1,19 @@
-# 4,14,24,34,44,54,64,74,84,94
-# 9,19,29,39,59,69,79,89
-# 40,90
+def R(n):
+    ts = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+    os = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+    return ts[n // 10] + os[n % 10]
 
-c = {
-	"VI": "IV",
-	"XVI": "XIV",
-	"XXVI": "XXIV",
-	"XXXVI": "XXXIV",
-	"XLVI": "XLIV",
-	"LVI": "LIV",
-	"LXVI": "XLIV",
-	"LXXVI": "LXXIV",
-	"LXXXVI": "LXXXIV",
-	"XCVI": "XCIV",
+ns, rs = {}, {}
+for n in range(1, 100):
+    r = R(n)
+    ns[r], rs[n] = n, R(n)
 
-	"XI": "IX",
-	"XXI": "XIX",
-	"XXXI": "XXIX",
-	"LXI": "XLI",
-	"LXXI": "LXIX",
-	"LXXXI": "LXXIX",
+r = input()
+s = sorted(r)
+v = ns[r]
+for m in range(1, n):
+    if s == sorted(rs[m]):
+        v = rs[m]
+        break
+print(v)
 
-	"LX": "XL",
-	"LXII": "XLII",
-	"LXIII": "XLIII",
-	"LXIV": "XLIV",
-	"LXV": "XLV",
-	"LXVII": "XLVII",
-	"LXVIII": "XLVIII"
-}
-b = input()
-print(b if b not in c else c[b])
