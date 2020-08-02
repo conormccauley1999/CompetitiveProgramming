@@ -1,18 +1,20 @@
-# UNSOLVED
+import operator as op
+from functools import reduce
 
-from math import factorial as f
+_ncr = {}
+def ncr(n, r):
+	if (n, r,) not in _ncr:
+		if n < r:
+			return 0
+		a = reduce(op.mul, range(n, n - r, -1), 1)
+		b = reduce(op.mul, range(1, r + 1), 1)
+		_ncr[(n, r,)] = a // b
+	return _ncr[(n, r,)]
 
-def C(n, r):
-	return f(n) / f(r) / f(n-r)
+n, k = map(int, input().split())
+vs = list(map(float, input().split()))
 
-n, k = map(int, raw_input().split())
-p = map(float, raw_input().split())
-r = ""
-
+rs = []
 for i in range(n):
-	s = 0
-	for d in range(n):
-		s += p[(i - d) % n] * (C(n - d - 1, k - 1) / C(n, k))
-	r += str(s) + " "
-
-print r
+	rs.append(sum(vs[(i - j) % n] * ncr(n - j - 1, k - 1) / ncr(n, k) for j in range(n)))
+print(*rs)
