@@ -1,24 +1,17 @@
-# Doesn't pass: TLE
+from math import floor, log10
 
-from math import log10
+s = input()
+l = len(s)
 
-def a(f):
-    x = 1
-    while f != 1:
-        x += 1
-        f /= x
-    return x
-
-f = int(input())
-d = len(str(f))
-if d < 4:
-    print(a(f))
-    quit()
-n = 7
-sm = sum(log10(x) for x in range(2, n))
-while True:
-    sm += log10(n)
-    n += 1
-    if sm > d:
-        print(n - 2)
-        break
+if l <= 4:
+    print({
+        1: 1, 1: 1, 2: 2, 6: 3, 24: 4, 120: 5, 720: 6, 5040: 7
+    }[int(s)])
+else:
+    m = [0, 1]
+    m.append(log10(2))
+    for i in range(3, 300000):
+        m.append(m[i - 1] + log10(i))
+    for i in range(3, 300000):
+        if floor(m[i]) + 1 == l:
+            print(i)
