@@ -1,59 +1,72 @@
-# UNSOLVED
-# Problem 650
+from copy import deepcopy
+from sympy import sieve
 
-from os import sys, path
-sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+def mul(facts_a, facts_b):
+	facts_c = deepcopy(facts_a)
+	for fact in facts_b:
+		if fact not in facts_a:
+			facts_c[fact] = 0
+		facts_c[fact] += facts_b[fact]
+	return facts_c
 
-from common import *
+def div(facts_a, facts_b):
+	facts_c = deepcopy(facts_a)
+	for fact in facts_b:
+		if fact not in facts_c or facts_c[fact] < facts_b[fact]:
+			raise Exception('Float division')
+		facts_c[fact] -= facts_b[fact]
+	return facts_c
 
-ps = npPrimesLessThan(10 ** 8)
+def exp(facts_a, exp):
+	facts_c = deepcopy(facts_a)
+	for fact in facts_c:
+		facts_c[fact] *= exp
+	return facts_c
 
-def factorPow(fs, n):
-	for f in fs:
-		fs[f] *= n
-	return fs
+M = 20000
+sieve.extend_to_no(M)
 
-def factorMul(fs1, fs2):
-	for v in fs2:
-		if v in fs1: fs1[v] += fs2[v]
-		else: fs1[v] = fs2[v]
-	return fs1
+d = {}
+for n in range(2, M + 1):
+	if n % 5000 == 0:
+		print(f'd = {n}')
+	m = n
+	_d = {}
+	for prime in sieve:
+		if prime > m:
+			break
+		while m % prime == 0:
+			if prime not in _d:
+				_d[prime] = 0
+			_d[prime] += 1
+			m //= prime
+	d[n] = _d
 
-def factorDiv(fs1, fs2):
-	for v in fs2:
-		if v in fs1: fs1[v] -= fs2[v]
-		else: fs1[v] = -fs2[v]
-	return fs1
+f = {2: d[2]}
+for n in range(3, M + 1):
+	if n % 5000 == 0:
+		print(f'f = {n}')
+	f[n] = mul(f[n - 1], d[n])
 
-_fs = {}
-def factors(n):
-	if n in _fs: return _fs[n]
-	fs = {}
-	for p in ps:
-		while n != 1 and n % p == 0:
-			if p in fs: fs[p] += 1
-			else: fs[p] = 1
-			n /= p
-		if n == 1:
-			_fs[n] = fs
-			return fs
-	print "ERROR " + str(n)
-	quit()
+B = {2: d[2]}
+for n in range(3, M + 1):
+	if n % 5000 == 0:
+		print(f'B = {n}')
+	B[n] = div(mul(B[n - 1], exp(d[n], n)), f[n])
 
-def B(n):
-	return n
-
-_D = {}
 def D(n):
-	if n in _D: return _D[n]
-	fs = factors(n)
-	v = 1
-	for f in fs:
-		v *= (((f ** (fs[f] + 1)) - 1) / (f - 1))
-	_D[n] = v
-	return v
+	if n % 100 == 0:
+		print(f'D = {n}')
+	facts = B[n]
+	res = 1
+	for fact in facts:
+		sm = 0
+		for i in range(facts[fact] + 1):
+			sm += pow(fact, i)
+		res *= sm
+	return res
 
 def S(n):
-	return sum(D(B(k)) for k in range(1, n + 1))
+	return (1 + sum(D(k) for k in range(2, n + 1))) % 1000000007
 
-print S(20000)
+print(S(M))
