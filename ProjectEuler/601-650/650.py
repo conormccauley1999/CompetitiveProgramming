@@ -1,3 +1,5 @@
+# Problem 650
+
 from copy import deepcopy
 from sympy import sieve
 
@@ -24,6 +26,7 @@ def exp(facts_a, exp):
 	return facts_c
 
 M = 20000
+MOD = 1000000007
 sieve.extend_to_no(M)
 
 d = {}
@@ -58,15 +61,18 @@ def D(n):
 	if n % 100 == 0:
 		print(f'D = {n}')
 	facts = B[n]
-	res = 1
+	divs = 1
 	for fact in facts:
-		sm = 0
-		for i in range(facts[fact] + 1):
-			sm += pow(fact, i)
-		res *= sm
-	return res
+		divs *= pow(fact, facts[fact] + 1) - 1
+		divs //= fact - 1
+		divs %= MOD
+	return divs
 
 def S(n):
-	return (1 + sum(D(k) for k in range(2, n + 1))) % 1000000007
+	sm = 1
+	for k in range(2, n + 1):
+		sm += D(k)
+		sm %= MOD
+	return sm
 
 print(S(M))

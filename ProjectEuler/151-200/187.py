@@ -1,3 +1,5 @@
+# Problem 187
+
 from sympy import sieve
 sieve.extend_to_no(3000000)
 primes = sorted(sieve._list)
