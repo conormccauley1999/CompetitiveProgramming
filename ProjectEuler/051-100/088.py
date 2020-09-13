@@ -1,5 +1,4 @@
-# Problem 88
-# Unfinished - takes too long to run
+# Problem 88 - UNSOLVED
 
 _g = {}
 def g(goal, cur_prod, cur_sum, vals_left, min_divisor):
