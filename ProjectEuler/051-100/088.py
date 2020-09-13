@@ -24,7 +24,6 @@ def g(goal, cur_prod, cur_sum, vals_left, min_divisor):
     _g[key] = result
     return result
 
-
 def f(k):
     goal = k + 1
     while True:
@@ -33,7 +32,6 @@ def f(k):
                 print(k, goal)
                 return goal
         goal += 1
-
 
 r = set()
 for k in range(2, 12001):
