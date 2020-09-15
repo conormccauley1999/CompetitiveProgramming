@@ -1,39 +1,23 @@
-# Problem 88 - UNSOLVED
+# Problem 88
 
-_g = {}
-def g(goal, cur_prod, cur_sum, vals_left, min_divisor):
-    key = (goal, cur_prod, cur_sum, vals_left,)
-    if key in _g:
-        return _g[key]
-    if goal == cur_prod and goal == cur_sum and vals_left == 0:
-        result = True
-    elif cur_prod > goal or cur_sum > goal:
-        result = False
-    elif vals_left == 0 and (cur_prod != goal or cur_sum != goal):
-        result = False
-    elif cur_prod != goal and cur_sum == goal:
-        result = False
-    elif goal % cur_prod != 0:
-        result = False
-    else:
-        for divisor in range(min_divisor, goal):
-            if goal % divisor == 0 and g(goal, cur_prod * divisor, cur_sum + divisor, vals_left - 1, divisor):
-                _g[key] = True
-                return True
-        result = False
-    _g[key] = result
-    return result
+M = 12000
 
-def f(k):
-    goal = k + 1
-    while True:
-        for divisor in range(1, goal):
-            if goal % divisor == 0 and g(goal, divisor, divisor, k - 1, divisor):
-                print(k, goal)
-                return goal
-        goal += 1
+_f = {}
+def f(k, left, min_div, cur_sum, used):
+    if left == 1:
+        assert(cur_sum <= k)
+        used += k - cur_sum
+        if used <= M and (used not in _f or k < _f[used]):
+            _f[used] = k
+        return
+    for i in range(2, min_div + 1):
+        if left % i == 0:
+            f(k, left // i, min(i, min_div), cur_sum + i, used + 1)
+
+for i in range(2, (M * 2) + 1):
+    f(i, i, i, 0, 0)
 
 r = set()
-for k in range(2, 12001):
-    r.add(f(k))
+for k in range(2, M + 1):
+    r.add(_f[k])
 print(sum(r))
