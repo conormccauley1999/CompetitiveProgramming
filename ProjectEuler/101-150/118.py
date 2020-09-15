@@ -1,19 +1,33 @@
-M = 987654321
+from copy import deepcopy
+from itertools import permutations
+from sympy.ntheory import isprime
 
-pa = [True] * (M + 1)
-p = 2
-while p * p <= M:
-    if not pa[p]:
-        continue
-    q = p * p
-    while q <= M:
-        pa[q] = False
-        q += p
-    p += 1
+ns = []
+for l in range(1, 10):        
+    for p in permutations(range(1, 10), r=l):
+        n = 0
+        for d in p:
+            n *= 10
+            n += d
+        ns.append(n)
 
-ps = set()
-for i in range(2, M + 1):
-    if pa[i]:
-        ps.add(i)
+vs = [n for n in ns if isprime(n)]
+ds = [set(map(int, str(v))) for v in vs]
+mi = len(vs)
+rs = set()
+def f(i, cv, cd):
+    global vs, mi, rs, ds
+    if len(cd) == 9:
+        rs.add(frozenset(cv))
+        return
+    for j in range(i, mi):
+        v, d = vs[j], ds[j]
+        if not cd.isdisjoint(d):
+            continue
+        _cv = deepcopy(cv)
+        _cv.add(v)
+        _cd = cd | d
+        f(j + 1, _cv, _cd)
 
-print(sorted(list(ps))[:20])
+f(0, set(), set())
+print(len(rs))
