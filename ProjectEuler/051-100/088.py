@@ -5,7 +5,6 @@ M = 12000
 _f = {}
 def f(k, left, min_div, cur_sum, used):
     if left == 1:
-        assert(cur_sum <= k)
         used += k - cur_sum
         if used <= M and (used not in _f or k < _f[used]):
             _f[used] = k
