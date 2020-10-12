@@ -24,8 +24,7 @@ R = 15499 / 94744
 sieve.extend_to_no(COUNT)
 primes = list(sieve._list[:COUNT])
 
-powers = [0] * 20
-cur_ix = 0
+powers = [0] * COUNT
 mn = 10 ** 10
 
 mx = pow(COUNT, MAX_POW)
